@@ -1,0 +1,223 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f2ff; /* Light blue background */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Dashboard Container Styles */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #004080; /* Dark blue */
+    color: #ffffff; /* White text */
+    width: 250px; /* Default width */
+    height: 100vh; /* Full height */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed; /* Keep the sidebar fixed on the left */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: width 0.3s ease; /* Smooth transition for width */
+    z-index: 10;
+}
+
+/* Collapse Sidebar */
+.sidebar.collapsed {
+    width: 60px; /* Collapsed width */
+}
+
+/* Sidebar Content (for hiding text when collapsed) */
+.sidebar-content {
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-content {
+    opacity: 0; /* Hide content when collapsed */
+    pointer-events: none; /* Disable interactions */
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #336699; /* Lighter blue on hover */
+}
+
+/* Main Content Styles */
+.main-content {
+    background-color: white; /* White background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    flex-grow: 1; /* Take up remaining space */
+    margin-left: 250px; /* Default space when sidebar is open */
+    transition: margin-left 0.3s ease; /* Smooth transition when sidebar is toggled */
+    z-index: 1;
+}
+
+/* Adjust Main Content Margin when Sidebar is Collapsed */
+.sidebar.collapsed ~ .main-content {
+    margin-left: 60px; /* Adjust space when sidebar is collapsed */
+}
+
+/* Toggle Button Styles */
+.toggle-btn {
+    background-color: #336699; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+    overflow: visible;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    display: none; /* Hidden by default */
+    position: absolute;
+    left: 0; /* Align tooltip to the left side of the button */
+    bottom: -40px; /* Place tooltip below the button */
+    background-color: #333; /* Tooltip background */
+    color: #fff; /* Tooltip text color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 1000;
+    font-size: 14px; /* Tooltip text size */
+}
+
+.toggle-btn:hover .tooltip {
+    display: block; /* Show tooltip on hover */
+}
+
+.toggle-btn:hover {
+    background-color: #005a8d; /* Change button color on hover */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #004080;
+    color: white;
+}
+
+td {
+    border: 1px solid #b3d1ff;
+}
+
+/* Heading Styles */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #004080;
+}
+
+h3 {
+    display: block;
+    font-size: 25px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+
+/* Form Group Styles */
+.form-group {
+    position: relative;
+    margin: 4px 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #004080;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b3d1ff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Submit Button Styles */
+.form-group input[type="submit"] {
+    background-color: #004080;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #336699;
+}
+
+/* Message Styles */
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+}
