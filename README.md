@@ -22,7 +22,7 @@ The **Smart Card for Students** is an advanced digital identification system des
 ## Installation & Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/smart-card-students.git
+   git clone https://github.com/SmartCard/smart-card-students.git
    ```
 2. Navigate to the project folder:
    ```sh
